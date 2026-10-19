@@ -1,0 +1,6 @@
+(function(){const{mergeObjects}=BreakdanceFrontend.utils;class BreakdanceTooltip{defaultOptions={placement:"bottom",offset:10,preview:!1,hideArrow:!1,};constructor(selector,id,options){this.selector=selector;this.id=id;this.element=document.querySelector(`${this.selector}`);this.options=mergeObjects(this.defaultOptions,options);this.isBuilder=!!window.parent.Breakdance;this.init()}
+destroy(){if(!this.tippyInstance)return;this.tippyInstance.destroy()}
+update(){this.destroy();this.init()}
+init(){if(typeof tippy!=="function")return;this.tippyInstance=tippy(this.element,{allowHTML:!0,arrow:this.options.hideArrow?!1:!0,offset:[0,this.options.offset],placement:this.options.placement,interactive:this.isBuilder?!1:!0,theme:`bde-tooltip-theme-${this.id}`,trigger:this.options.preview?"manual":"mouseenter focus",hideOnClick:this.options.preview?!1:!0,showOnCreate:this.options.preview?!0:!1,})}}
+window.BreakdanceTooltip=BreakdanceTooltip})()
+;
