@@ -8,7 +8,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   return (
-    <header className="absolute left-0 right-0 top-0 z-50 h-[73px] bg-white">
+    <header className="site-header absolute left-0 right-0 top-0 z-50 min-h-[73px] bg-white">
       <div className="navbar-inner mx-auto flex h-full w-[calc(100%-40px)] max-w-[1166px] items-center justify-between gap-8">
         <Link href="/" aria-label="Pro MEP Solution home" className="shrink-0">
           <span className="brand-wordmark"><span>PRO MEP</span><strong>SOLUTION</strong></span>
@@ -33,8 +33,13 @@ export default function Navbar() {
       </div>
       {open && <div className="border-t border-slate-100 bg-white px-5 py-5 xl:hidden">
         <nav className="container-wide flex flex-col gap-4" aria-label="Mobile navigation">
-          {navItems.map((item) => <Link key={item.label} href={item.href} onClick={() => setOpen(false)} className="border-b border-slate-100 pb-3 font-semibold">{item.label}</Link>)}
-          <Link href="/contact" onClick={() => setOpen(false)} className="w-fit bg-brand-burgundy px-5 py-3 text-sm font-bold text-white">GET A QUOTE</Link>
+          {navItems.map((item) => item.children ? (
+            <div key={item.label} className="mobile-nav-group">
+              <button type="button" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen} className="mobile-nav-toggle">{item.label}<span aria-hidden="true">{servicesOpen ? "−" : "+"}</span></button>
+              {servicesOpen && <div className="mobile-nav-children">{item.children.map((child) => <Link key={child} href="/services" onClick={() => setOpen(false)}>{child}</Link>)}</div>}
+            </div>
+          ) : <Link key={item.label} href={item.href} onClick={() => setOpen(false)} className="mobile-nav-link">{item.label}</Link>)}
+          <div className="mobile-nav-actions"><a href="tel:+18888590222">CALL NOW</a><Link href="/contact-us" onClick={() => setOpen(false)}>GET A QUOTE</Link></div>
         </nav>
       </div>}
     </header>
