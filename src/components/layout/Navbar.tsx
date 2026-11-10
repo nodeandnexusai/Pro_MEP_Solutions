@@ -30,7 +30,7 @@ export default function Navbar() {
                 {item.label}<span aria-hidden="true" className="text-[11px]">⌄</span>
               </button>
               {servicesOpen && <div className="absolute left-0 top-8 w-56 rounded-sm border border-slate-100 bg-white p-3 shadow-soft">
-                {item.children.map((child) => <Link key={child} href="/services" onClick={() => setServicesOpen(false)} className="block px-3 py-2 text-sm hover:bg-brand-cream hover:text-brand-burgundy">{child}</Link>)}
+                {item.children.map((child) => <Link key={child} href={`/services#${child.toLowerCase().replaceAll(" ", "-")}`} onClick={() => setServicesOpen(false)} className="block px-3 py-2 text-sm hover:bg-brand-cream hover:text-brand-burgundy">{child}</Link>)}
               </div>}
             </div>
           ) : <Link key={item.label} href={item.href} className={`flex h-full items-center border-b-2 pt-px font-poppins text-[14px] font-medium transition hover:text-brand-burgundy ${isActive(item.href) ? "border-brand-ink text-brand-ink" : "border-transparent text-brand-burgundy"}`}>{item.label}</Link>)}
@@ -46,7 +46,7 @@ export default function Navbar() {
           {navItems.map((item) => item.children ? (
             <div key={item.label} className="mobile-nav-group">
               <button type="button" onClick={() => setServicesOpen(!servicesOpen)} aria-expanded={servicesOpen} className="mobile-nav-toggle">{item.label}<span aria-hidden="true">{servicesOpen ? "−" : "+"}</span></button>
-              {servicesOpen && <div className="mobile-nav-children">{item.children.map((child) => <Link key={child} href="/services" onClick={() => setOpen(false)}>{child}</Link>)}</div>}
+              {servicesOpen && <div className="mobile-nav-children">{item.children.map((child) => <Link key={child} href={`/services#${child.toLowerCase().replaceAll(" ", "-")}`} onClick={() => setOpen(false)}>{child}</Link>)}</div>}
             </div>
           ) : <Link key={item.label} href={item.href} onClick={() => setOpen(false)} className="mobile-nav-link">{item.label}</Link>)}
           <div className="mobile-nav-actions"><a href="tel:+18888590222">CALL NOW</a><Link href="/contact-us" onClick={() => setOpen(false)}>GET A QUOTE</Link></div>
