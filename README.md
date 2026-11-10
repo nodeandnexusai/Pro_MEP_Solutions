@@ -10,7 +10,6 @@ src/
 │   ├── about/page.tsx
 │   ├── services/page.tsx
 │   ├── trades/page.tsx
-│   ├── recruitment/page.tsx
 │   ├── contact/page.tsx
 │   └── globals.css
 ├── components/
@@ -31,7 +30,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`. The routes are `/`, `/about`, `/services`, `/trades`, `/recruitment`, and `/contact`.
+Open `http://localhost:3000`. The routes are `/`, `/about`, `/services`, `/trades`, and `/contact`.
 
 ## Migration roadmap for a fresh clone
 
