@@ -2,12 +2,21 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navItems } from "@/lib/site";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    if (href === "/about-us") return pathname === "/about" || pathname === "/about-us";
+    if (href === "/our-trades") return pathname === "/trades" || pathname === "/our-trades";
+    if (href === "/contact-us") return pathname === "/contact" || pathname === "/contact-us";
+    return pathname.startsWith(href);
+  };
   return (
     <header className="site-header absolute left-0 right-0 top-0 z-50 min-h-[73px] bg-white">
       <div className="navbar-inner mx-auto flex h-full w-[calc(100%-40px)] max-w-[1166px] items-center justify-between gap-8">
@@ -17,14 +26,14 @@ export default function Navbar() {
         <nav className="hidden h-full items-center gap-[24px] xl:flex" aria-label="Main navigation">
           {navItems.map((item) => item.children ? (
             <div className="relative" key={item.label}>
-              <button onClick={() => setServicesOpen(!servicesOpen)} className="flex h-full items-center gap-1 border-b-2 border-brand-ink pt-px font-poppins text-[14px] font-medium text-brand-ink transition hover:text-brand-burgundy">
+              <button onClick={() => setServicesOpen(!servicesOpen)} className={`flex h-full items-center gap-1 border-b-2 pt-px font-poppins text-[14px] font-medium transition hover:text-brand-burgundy ${isActive(item.href) ? "border-brand-ink text-brand-ink" : "border-transparent text-brand-burgundy"}`}>
                 {item.label}<span aria-hidden="true" className="text-[11px]">⌄</span>
               </button>
               {servicesOpen && <div className="absolute left-0 top-8 w-56 rounded-sm border border-slate-100 bg-white p-3 shadow-soft">
                 {item.children.map((child) => <Link key={child} href="/services" onClick={() => setServicesOpen(false)} className="block px-3 py-2 text-sm hover:bg-brand-cream hover:text-brand-burgundy">{child}</Link>)}
               </div>}
             </div>
-          ) : <Link key={item.label} href={item.href} className={`flex h-full items-center border-b-2 pt-px font-poppins text-[14px] font-medium transition hover:text-brand-burgundy ${item.label === "Home" ? "border-brand-ink text-brand-ink" : "border-transparent text-brand-burgundy"}`}>{item.label}</Link>)}
+          ) : <Link key={item.label} href={item.href} className={`flex h-full items-center border-b-2 pt-px font-poppins text-[14px] font-medium transition hover:text-brand-burgundy ${isActive(item.href) ? "border-brand-ink text-brand-ink" : "border-transparent text-brand-burgundy"}`}>{item.label}</Link>)}
           <Link href="/contact-us" className="ml-[-2px] flex h-[42px] w-[120px] items-center justify-center bg-brand-burgundy font-poppins text-[12px] font-bold text-white transition hover:bg-[#7b1a1e]">GET A QUOTE</Link>
         </nav>
         <div className="flex items-center gap-5 xl:hidden">
