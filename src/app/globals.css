@@ -41,8 +41,15 @@ address, a, p { overflow-wrap: anywhere; }
 .whatsapp-float img { height: 48px; width: 48px; border-radius: 50%; object-fit: cover; }
 .social-float a:hover, .social-float a:focus-visible { transform: scale(1.08); }
 .social-float img { height: 100%; width: 100%; object-fit: cover; }
-.chat-float { background: #fff !important; }
+.chat-float { background: #fff !important; border: 0; cursor: pointer; }
 .chat-float img { height: 100%; width: 100%; object-fit: contain; }
+.chat-panel { position: fixed; right: 35px; bottom: 96px; z-index: 21; width: min(360px, calc(100vw - 32px)); padding: 14px; border: 1px solid #e1e1e1; border-radius: 12px; background: #fff; box-shadow: 0 8px 28px rgba(23,40,60,.2); }
+.chat-panel-message { display: flex; align-items: flex-start; gap: 10px; padding: 2px 2px 14px; }
+.chat-panel-message img { height: 36px; width: 29px; flex: 0 0 29px; object-fit: contain; }
+.chat-panel-message p { margin: 0; padding: 10px 12px; border-radius: 10px; background: #f0f0f0; color: #17283c; font-size: 13px; line-height: 1.45; }
+.chat-panel-form { display: flex; gap: 8px; }
+.chat-panel-form input { min-width: 0; flex: 1; height: 44px; padding: 0 10px; border: 1px solid #b7b7b7; border-radius: 7px; font-size: 16px; }
+.chat-panel-form button { min-width: 70px; border: 0; border-radius: 7px; background: var(--burgundy); color: #fff; font-weight: 700; }
 .brand-wordmark { display: flex; width: 200px; flex-direction: column; color: #741016; font-family: Poppins, sans-serif; font-size: 21px; font-weight: 700; letter-spacing: .04em; line-height: .95; }
 .brand-wordmark strong { color: #172033; font-size: 14px; letter-spacing: .22em; line-height: 1.6; }
 .site-logo { display: block; height: 68px; width: 105px; padding: 4px; background: #fff; object-fit: contain; }
@@ -179,6 +186,7 @@ address, a, p { overflow-wrap: anywhere; }
   .social-float { right: max(12px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); gap: 7px; }
   .social-float a { height: 52px; width: 52px; flex-basis: 52px; }
   .whatsapp-float img { height: 42px; width: 42px; }
+  .chat-panel { right: max(12px, env(safe-area-inset-right)); bottom: calc(max(14px, env(safe-area-inset-bottom)) + 59px); }
   .contact-page-grid { padding-top: 52px; padding-bottom: 52px; }
   .contact-page-grid h2 { font-size: clamp(30px, 8vw, 40px); }
   .contact-form { padding: 22px !important; }
