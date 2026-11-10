@@ -43,6 +43,8 @@ address, a, p { overflow-wrap: anywhere; }
 .social-float img { height: 100%; width: 100%; object-fit: cover; }
 .brand-wordmark { display: flex; width: 200px; flex-direction: column; color: #741016; font-family: Poppins, sans-serif; font-size: 21px; font-weight: 700; letter-spacing: .04em; line-height: .95; }
 .brand-wordmark strong { color: #172033; font-size: 14px; letter-spacing: .22em; line-height: 1.6; }
+.site-logo { display: block; height: 68px; width: 105px; object-fit: contain; mix-blend-mode: multiply; }
+.footer-logo { display: block; height: 105px; width: 160px; object-fit: contain; mix-blend-mode: screen; }
 .google-reviews-title { margin: 0; color: #172033; font-size: 48px; line-height: 1.2; }
 .google-reviews-title em { color: var(--burgundy); font-style: normal; }
 .google-rating { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 22px; color: #111; font-family: Poppins, sans-serif; font-size: 14px; }
@@ -131,8 +133,7 @@ address, a, p { overflow-wrap: anywhere; }
   .site-header { min-height: 73px; }
   .site-header > div:not(.navbar-inner) { position: absolute; top: 73px; left: 0; width: 100%; max-height: calc(100svh - 73px); overflow-y: auto; box-shadow: 0 12px 24px rgba(23,40,60,.12); }
   .navbar-inner { width: calc(100% - 24px); }
-  .brand-wordmark { width: auto; font-size: 18px; }
-  .brand-wordmark strong { font-size: 11px; }
+  .site-logo { height: 64px; width: 100px; }
   .navbar-inner > div { position: absolute; right: 0; }
   .navbar-inner > div button { min-height: 44px; min-width: 44px; }
   .home-hero { height: auto; min-height: 0; padding-bottom: 28px; }

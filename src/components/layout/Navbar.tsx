@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { navItems } from "@/lib/site";
 
@@ -11,7 +12,7 @@ export default function Navbar() {
     <header className="site-header absolute left-0 right-0 top-0 z-50 min-h-[73px] bg-white">
       <div className="navbar-inner mx-auto flex h-full w-[calc(100%-40px)] max-w-[1166px] items-center justify-between gap-8">
         <Link href="/" aria-label="Pro MEP Solution home" className="shrink-0">
-          <span className="brand-wordmark"><span>PRO MEP</span><strong>SOLUTION</strong></span>
+          <Image src="/images/pro-mep-logo.png" alt="Pro MEP Solution" width={154} height={100} className="site-logo" priority />
         </Link>
         <nav className="hidden h-full items-center gap-[24px] xl:flex" aria-label="Main navigation">
           {navItems.map((item) => item.children ? (
