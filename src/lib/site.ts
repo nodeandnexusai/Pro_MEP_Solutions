@@ -7,16 +7,15 @@ export const navItems = [
 ];
 
 export const services = [
-  { title: "Construction Estimating", text: "Detailed estimates that help contractors bid with confidence and win more profitable work.", icon: "01" },
-  { title: "Quantity Takeoffs", text: "Accurate material quantities, clear scopes, and organized takeoffs for every project phase.", icon: "02" },
-  { title: "Cost Consulting", text: "Practical insight from experienced estimators to keep budgets predictable from concept to completion.", icon: "03" }
+  { title: "MEP Design", text: "Coordinated mechanical, electrical and plumbing design support for construction projects.", icon: "01" },
+  { title: "Quantity Takeoff", text: "Accurate material quantities and organized takeoffs for every project phase.", icon: "02" },
+  { title: "Cost Estimation", text: "Reliable project cost estimates that help contractors bid with confidence.", icon: "03" }
 ];
 
 export const trades = [
-  ["General Construction", "CONTRACTOR-190x190-1.webp"],
+  ["Mechanical (HVAC)", "Construction-Estimating-Services-2.webp"],
   ["Electrical", "electrical-2.png"],
-  ["Mechanical & Plumbing", "Construction-Estimating-Services-2.webp"],
-  ["Concrete & Masonry", "Construction-Estimating-Services-2.webp"],
-  ["Metal & Structural Steel", "METAL-1.png"],
-  ["Drywall & Finishes", "Construction-Estimating-Services-3-1.webp"]
+  ["Plumbing", "Construction-Estimating-Services-4.webp"],
+  ["Architecture", "about-estimators.png"],
+  ["Structural", "METAL-1.png"]
 ];
