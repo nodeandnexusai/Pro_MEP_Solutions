@@ -32,6 +32,12 @@ npm run dev
 
 Open `http://localhost:3000`. The routes are `/`, `/about`, `/services`, `/trades`, and `/contact`.
 
+## Local admin control panel
+
+Run the dev server, then open `http://localhost:3000/admin`. Enter any 4+ character access code for this local preview panel. It stores announcement text, brand colors, and section visibility preferences in this browser's local storage.
+
+This is a local prototype, not production authentication. Before sharing an admin link with a client, connect the panel to Supabase Auth and a database so access is private across devices.
+
 ## Migration roadmap for a fresh clone
 
 ```powershell
