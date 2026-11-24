@@ -15,10 +15,10 @@ const quickQuestions = ["What services do you offer?", "How fast is delivery?", 
 function getReply(input: string) {
   const question = input.toLowerCase();
   if (question.includes("service") || question.includes("mep") || question.includes("design")) {
-    return "We provide MEP Design, Quantity Takeoff, and Cost Estimation for construction projects.";
+    return "We provide MEP Design, Cost Estimation with quantity takeoffs, and CAD Drafting for construction projects.";
   }
   if (question.includes("takeoff") || question.includes("quantity") || question.includes("material")) {
-    return "Our quantity takeoffs organize accurate material quantities by trade and project scope.";
+    return "Our cost estimation service includes accurate quantity takeoffs organized by trade and project scope.";
   }
   if (question.includes("cost") || question.includes("estimate") || question.includes("price")) {
     return "Share your drawings and project scope for a clear, project-specific cost estimate.";
@@ -29,7 +29,7 @@ function getReply(input: string) {
   if (question.includes("contact") || question.includes("quote") || question.includes("hire")) {
     return "You can request a quote through our contact form or message us directly on WhatsApp.";
   }
-  return "I can help with MEP Design, Quantity Takeoff, Cost Estimation, turnaround, and quotes. For anything else, use WhatsApp to speak with our team.";
+  return "I can help with MEP Design, Cost Estimation with quantity takeoffs, CAD Drafting, turnaround, and quotes. For anything else, use WhatsApp to speak with our team.";
 }
 
 export default function ChatWidget() {

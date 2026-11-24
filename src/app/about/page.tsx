@@ -1,5 +1,80 @@
-import Image from "next/image";
+import Link from "next/link";
 import PageHero from "@/components/layout/PageHero";
-import CTA from "@/components/sections/CTA";
-export const metadata = { title: "About Us" };
-export default function About() { return <main><PageHero title="Who we are & what we do" intro="Pro MEP Solution delivers top-notch cost estimating and consulting services to the construction industry, helping teams make better decisions at every stage." /><section className="container-wide grid gap-12 py-24 md:grid-cols-2 md:items-center"><div><div className="eyebrow mb-5">Built on accuracy</div><h2 className="text-4xl leading-tight md:text-5xl">A trusted partner for the work behind the work.</h2><p className="mt-6 text-slate-600">We believe every successful project starts with a clear understanding of its numbers. Our estimators combine hands-on construction knowledge with modern workflows to deliver reliable results, on time.</p><p className="mt-4 text-slate-600">Whether you are a general contractor, subcontractor, architect, or developer, our team works alongside you as an extension of your business.</p></div><Image src="/images/about-estimators.png" alt="Construction estimators collaborating" width={384} height={316} className="w-full rounded-tl-[100px] rounded-br-[100px]" /></section><section className="bg-brand-cream py-20"><div className="container-wide grid gap-8 text-center sm:grid-cols-3"><div><strong className="block text-5xl text-brand-burgundy">10+</strong><span className="text-sm">Years of experience</span></div><div><strong className="block text-5xl text-brand-burgundy">50+</strong><span className="text-sm">Specialized trades</span></div><div><strong className="block text-5xl text-brand-burgundy">1K+</strong><span className="text-sm">Projects completed</span></div></div></section><CTA /></main> }
+
+export const metadata = {
+  title: "About Us",
+  description:
+    "Learn about Pro MEP Solution, a professional engineering and drafting service provider specializing in MEP design, cost estimation, quantity takeoffs, and CAD drafting.",
+};
+
+export default function About() {
+  return (
+    <main className="about-page">
+      <PageHero
+        title="About Us"
+        intro="Delivering Reliable Engineering, Design & Construction Solutions"
+        className="about-page-hero"
+      />
+      <section className="container-wide py-16 md:py-20">
+        <div className="max-w-4xl">
+          <p className="text-justify text-lg leading-8 text-slate-600 md:text-xl">
+            We are a professional engineering and drafting service provider
+            specializing in <strong>MEP Design, Construction Cost Estimation,
+            Quantity Takeoffs, and CAD Drafting Services</strong>. We help
+            architects, contractors, developers, engineering consultants, and
+            construction professionals turn their project requirements into
+            accurate, coordinated, and practical design solutions.
+          </p>
+          <p className="mt-4 text-justify text-lg leading-8 text-slate-600 md:text-xl">
+            With extensive experience in the construction and engineering
+            industry, we focus on delivering technically sound drawings,
+            detailed estimates, and high-quality documentation that support
+            efficient project planning, coordination, and execution.
+          </p>
+          <p className="mt-4 text-justify text-lg leading-8 text-slate-600 md:text-xl">
+            Our approach combines engineering expertise, attention to detail, and
+            a strong understanding of construction practices to deliver
+            solutions that meet project requirements, applicable codes, and
+            industry standards.
+          </p>
+        </div>
+      </section>
+      <section className="bg-brand-cream py-14 md:py-16">
+        <div className="container-wide">
+          <div className="mx-auto max-w-4xl border-y border-brand-gold/40 py-8 text-center md:py-10">
+            <h2 className="text-5xl leading-tight md:text-6xl">Our Mission</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600 md:text-xl">
+              Our mission is to provide dependable engineering, estimation, and
+              drafting solutions that help construction professionals save time,
+              control costs, improve design coordination, and execute projects
+              with confidence.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="container-wide mb-16 overflow-hidden rounded-[28px] bg-brand-burgundy px-7 py-9 text-white shadow-soft md:mb-20 md:flex md:items-center md:justify-between md:px-12 md:py-10">
+        <div className="max-w-2xl">
+          <h2 className="text-4xl leading-tight md:text-5xl">
+            Let&apos;s Work Together
+          </h2>
+          <p className="mt-4 text-lg leading-8 text-slate-200">
+            Whether you need a complete MEP design package, detailed
+            construction cost estimation, or professional CAD drafting, we are
+            ready to support your next project.
+          </p>
+          <p className="mt-3 text-lg leading-8 text-slate-200">
+            From engineering design to quantity takeoffs and construction
+            documentation, we bring your project requirements together through
+            one reliable service partner.
+          </p>
+        </div>
+        <Link
+          href="/contact"
+          className="mt-6 inline-block shrink-0 bg-brand-gold px-6 py-3 text-sm font-bold text-brand-ink transition hover:bg-white md:ml-10 md:mt-0"
+        >
+          CONTACT US →
+        </Link>
+      </section>
+    </main>
+  );
+}

@@ -1,15 +1,15 @@
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
-  { label: "Services", href: "/services", children: ["MEP Design", "Quantity Takeoff", "Cost Estimation"] },
+  { label: "Services", href: "/services", children: ["MEP Design", "Cost Estimation", "CAD Drafting Solution"] },
   { label: "Our Trades", href: "/our-trades" },
   { label: "Contact Us", href: "/contact-us" }
 ];
 
 export const services = [
   { title: "MEP Design", text: "Coordinated mechanical, electrical and plumbing design support for construction projects.", icon: "01" },
-  { title: "Quantity Takeoff", text: "Accurate material quantities and organized takeoffs for every project phase.", icon: "02" },
-  { title: "Cost Estimation", text: "Reliable project cost estimates that help contractors bid with confidence.", icon: "03" }
+  { title: "Cost Estimation", text: "Reliable project cost estimates and quantity takeoffs that help contractors bid with confidence.", icon: "02" },
+  { title: "CAD Drafting Solution", text: "Professional CAD drafting and conversion support for accurate, organized project documentation.", icon: "03" }
 ];
 
 export const trades = [

@@ -28,6 +28,12 @@ address, a, p { overflow-wrap: anywhere; }
 .hero-blueprint { position: absolute; inset: 0; opacity: .3; background: linear-gradient(135deg, transparent 0 21%, rgba(98,18,21,.18) 21.1% 21.35%, transparent 21.45% 48%, rgba(98,18,21,.15) 48.1% 48.3%, transparent 48.4%), linear-gradient(45deg, transparent 0 30%, rgba(98,18,21,.13) 30.1% 30.3%, transparent 30.4% 70%, rgba(98,18,21,.12) 70.1% 70.3%, transparent 70.4%); }
 .hero-copy { position: absolute; left: -36px; top: 50%; z-index: 2; transform: translateY(-50%); }
 .hero-copy h1 { font-size: 35px; font-weight: 700; }
+.hero-services { display: flex; max-width: 470px; flex-direction: column; gap: 5px; margin-top: 16px; color: var(--burgundy); font-size: 14px; line-height: 1.4; }
+.hero-services strong { margin-bottom: 2px; font-size: 16px; }
+.hero-services span::before { margin-right: 7px; color: var(--gold); content: "•"; }
+.hero-actions { display: flex; align-items: center; gap: 18px; margin-top: 20px; }
+.hero-primary-button { display: inline-flex; align-items: center; border-radius: 999px; background: var(--burgundy); padding: 12px 22px; color: #fff; font-size: 13px; font-weight: 700; }
+.hero-secondary-button { color: var(--burgundy); font-size: 13px; font-weight: 700; }
 .hero-art { position: absolute; right: 2%; top: 84px; z-index: 1; width: 57%; max-width: 760px; height: 330px; object-fit: contain; }
 .hero-stats { position: absolute; right: 3%; bottom: 16px; z-index: 2; display: flex; gap: 76px; text-align: left; }
 .hero-stats strong { display: block; color: var(--burgundy); font-family: Poppins, sans-serif; font-size: 52px; line-height: 1; font-weight: 700; }
@@ -59,8 +65,12 @@ address, a, p { overflow-wrap: anywhere; }
 .chat-whatsapp-link { display: block; margin-top: 10px; color: #168b4e; font-size: 12px; font-weight: 700; text-align: center; }
 .brand-wordmark { display: flex; width: 200px; flex-direction: column; color: #741016; font-family: Poppins, sans-serif; font-size: 21px; font-weight: 700; letter-spacing: .04em; line-height: .95; }
 .brand-wordmark strong { color: #172033; font-size: 14px; letter-spacing: .22em; line-height: 1.6; }
-.site-logo { display: block; height: 68px; width: 105px; padding: 4px; background: #fff; object-fit: contain; }
+.site-logo { display: block; height: 82px; width: 126px; padding: 4px; background: #fff; object-fit: contain; }
 .footer-logo { display: block; height: 105px; width: 160px; padding: 6px; background: #fff; object-fit: contain; }
+.site-footer { background-color: #eaf3fb; background-image: url("/images/footer-background.webp"); background-position: center; background-size: cover; color: var(--ink); }
+.site-footer::before { position: absolute; inset: 0; background: rgba(235, 246, 255, .86); content: ""; }
+.site-footer a { transition: color .2s ease; }
+.site-footer a:hover { color: var(--burgundy); }
 .google-reviews-title { margin: 0; color: #172033; font-size: 48px; line-height: 1.2; }
 .google-reviews-title em { color: var(--burgundy); font-style: normal; }
 .google-rating { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 22px; color: #111; font-family: Poppins, sans-serif; font-size: 14px; }
@@ -131,7 +141,12 @@ address, a, p { overflow-wrap: anywhere; }
 *:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
 
+.about-page > section { min-height: 0 !important; }
+.about-page-hero { padding-block: 3.5rem !important; }
+
 @media (min-width: 768px) {
+  .home-hero { margin-top: 88px; }
+  .about-page-hero { padding-block: 5rem !important; }
   main > section:nth-of-type(1) { min-height: 540px; }
   main > section:nth-of-type(2) { min-height: 158px; }
   main > section:nth-of-type(3) { min-height: 542px; }
@@ -152,7 +167,7 @@ address, a, p { overflow-wrap: anywhere; }
   .site-header { min-height: 73px; }
   .site-header > div:not(.navbar-inner) { position: absolute; top: 73px; left: 0; width: 100%; max-height: calc(100svh - 73px); overflow-y: auto; box-shadow: 0 12px 24px rgba(23,40,60,.12); }
   .navbar-inner { width: calc(100% - 24px); }
-  .site-logo { height: 64px; width: 100px; }
+  .site-logo { height: 74px; width: 114px; }
   .navbar-inner > div { position: absolute; right: 0; }
   .navbar-inner > div button { min-height: 44px; min-width: 44px; }
   .home-hero { height: auto; min-height: 0; padding-bottom: 28px; }
