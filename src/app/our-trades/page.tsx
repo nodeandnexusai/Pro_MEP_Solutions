@@ -1,1 +1,1 @@
-export { default, metadata } from "../trades/page";
+export { default, metadata } from "../services/page";

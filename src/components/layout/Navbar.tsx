@@ -7,7 +7,9 @@ import { useState } from "react";
 import { navItems } from "@/lib/site";
 
 const serviceHref = (child: string) =>
-  child === "MEP Design"
+  child === "Our Services"
+    ? "/our-trades"
+    : child === "MEP Design"
     ? "/services/mep-design"
     : child === "Cost Estimation"
       ? "/services/cost-estimation"
@@ -24,6 +26,7 @@ export default function Navbar() {
     if (href === "/about-us") return pathname === "/about" || pathname === "/about-us";
     if (href === "/our-trades") return pathname === "/trades" || pathname === "/our-trades";
     if (href === "/contact-us") return pathname === "/contact" || pathname === "/contact-us";
+    if (href === "/services") return pathname.startsWith(href) || pathname === "/our-trades";
     return pathname.startsWith(href);
   };
   return (
