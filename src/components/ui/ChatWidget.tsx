@@ -76,7 +76,13 @@ export default function ChatWidget() {
         </section>
       )}
       <button type="button" className="chat-float" onClick={() => setOpen(!open)} aria-label={open ? "Close Pro MEP Assistant" : "Open Pro MEP Assistant"} aria-expanded={open}>
-        <Image src="/images/chat-icon.png" alt="" width={51} height={49} />
+        <svg viewBox="0 0 60 60" aria-hidden="true" focusable="false">
+          <circle cx="30" cy="30" r="30" fill="#741016" />
+          <path d="M19 19h22a4 4 0 0 1 4 4v13a4 4 0 0 1-4 4H28l-8 6v-6h-1a4 4 0 0 1-4-4V23a4 4 0 0 1 4-4Z" fill="none" stroke="white" strokeLinejoin="round" strokeWidth="2.5" />
+          <circle cx="23" cy="30" r="1.5" fill="white" />
+          <circle cx="30" cy="30" r="1.5" fill="white" />
+          <circle cx="37" cy="30" r="1.5" fill="white" />
+        </svg>
       </button>
     </>
   );
